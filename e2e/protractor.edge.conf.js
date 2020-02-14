@@ -15,34 +15,14 @@ exports.config = {
   ],
   // seleniumArgs: ['-Dwebdriver.edge.driver=D:\\projects\\test-ui\\node_modules\\webdriver-manager\\selenium\\msedgedriver.exe'],
   shardTestFiles: true,
-  maxInstances: 2,
-  multiCapabilities: [
-    {
-      'browserName': 'chrome'
-      //,
-      //'chromeOptions': {'args': [ '--headless', '--start-maximized', 'disable-infobars']}
-    },
-    {
-      'browserName': 'firefox'
-      //,
-      // loggingPrefs: {
-      //   driver: 'DEBUG',
-      //   server: 'INFO',
-      //   browser: 'ALL'
-      // }    
-    }
-    // {
-    //   browserName: 'firefox',
-    //   firefoxOptions: {
-    //     args: ['--headless']
-    //   },
-    //   'moz:firefoxOptions': {
-    //     args: [ '--headless' ]
-    //   }
-    // }
-  ],
-  directConnect: true,
-  //seleniumAddress: 'http://localhost:4444/wd/hub',
+  maxInstances: 1,
+   capabilities: {
+      'browserName': 'MicrosoftEdge',
+      'platform': 'WINDOWS',
+  }, 
+  directConnect: false,
+  seleniumAddress: 'http://localhost:4444/wd/hub',
+  
   baseUrl: 'http://localhost:4200/',
   framework: 'jasmine',
   jasmineNodeOpts: {
