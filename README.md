@@ -46,7 +46,15 @@ Selenium WebDriver Framework: Selenium Client Lib (Java, JS, ..) > JSON Protocol
 Webdriver-Manager: command-line tool to get selenium server running; a selenium server and browser driver manager (w3c webdriver) for your end to end tests. 
 
 > npm install (-g) webdriver-manager
+> webdriver-manager clean // cleans /selenium dir
 > webdriver-manager update
+> (webdriver-manager update --versions.gecko=v0.25.0 --versions.chrome=74.0.3729.6  --standalone false) install specific version
+> webdriver-manager clean, status
+
+> ng e2e --webdriver-update=false
+
+
+
 
 - Prior to starting the selenium server, 'update' downloads the selenium server jar and driver binaries. By default it will download the selenium server jar and chromedriver binary (/selenium/ folder).
 - beware of differnt locations of webdriver-manager (e.g. protractor installs version in its node_modules)
@@ -74,4 +82,21 @@ alternativ:
   }
 
 
+ 
+
 https://selenium.dev/documentation/en/webdriver/understanding_the_components/
+
+
+https://dev.to/davert/5-reasons-you-should-not-use-protractor-in-2019-3l4b
+
+
+
+--------
+
+ (BDD) test frameworks out of the box: Jasmine and Mocha. (not Cucumber)
+
+ >> Test multiple versions of a browser (and on differnt OS), and in parallel, is impossible in protractor and selenium webDriver on one machine..
+ >> use selenium grid (e.g. device lab or VMs / clients as docker machines); problem with windows! and mobile (ios, andriod)..  
+ >> In house: Zalenium - docker based inhouse grid / jenkins
+ >>  Grid in Cloud:   kobiton, sauce, BrowserStack , aws device farm, LambdaTest
+ >> Appium is an open-source tool for automating native, mobile web, and hybrid applications on iOS mobile, Android mobile, and Windows desktop platforms.

@@ -14,10 +14,21 @@ describe('workspace-project App', () => {
   });
 
   afterEach(async () => {
-    // Assert that there are no errors emitted from the browser
-    const logs = await browser.manage().logs().get(logging.Type.BROWSER);
-    expect(logs).not.toContain(jasmine.objectContaining({
-      level: logging.Level.SEVERE,
-    } as logging.Entry));
-  });
+    // issue on firefox with getLogs(); https://github.com/w3c/webdriver/issues/406
+    browser.getCapabilities().then(async (cap) => {
+      browser.browserName = cap.get('browserName');
+      if (browser.browserName !== 'firefox'){
+      // Assert that there are no errors emitted from the browser's console log
+      const logs = await browser.manage().logs().get(logging.Type.BROWSER);
+      expect(logs).not.toContain(jasmine.objectContaining({
+        level: logging.Level.SEVERE,
+       } as logging.Entry));
+      }
+    }); 
+  });  
+    
 });
+
+
+
+  

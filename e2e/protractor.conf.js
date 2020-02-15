@@ -13,12 +13,13 @@ exports.config = {
   specs: [
     './src/**/*.e2e-spec.ts'
   ],
-  // seleniumArgs: ['-Dwebdriver.edge.driver=D:\\projects\\test-ui\\node_modules\\webdriver-manager\\selenium\\msedgedriver.exe'],
   shardTestFiles: true,
   maxInstances: 2,
+  // chromeDriver: './node_modules/webdriver-manager/selenium/chromedriver_2.20',
   multiCapabilities: [
     {
-      'browserName': 'chrome'
+      'browserName': 'chrome',
+      'version': '11' // not working here
       //,
       //'chromeOptions': {'args': [ '--headless', '--start-maximized', 'disable-infobars']}
     },
