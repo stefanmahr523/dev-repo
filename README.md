@@ -86,7 +86,6 @@ alternativ:
 
 https://selenium.dev/documentation/en/webdriver/understanding_the_components/
 
-
 https://dev.to/davert/5-reasons-you-should-not-use-protractor-in-2019-3l4b
 
 
